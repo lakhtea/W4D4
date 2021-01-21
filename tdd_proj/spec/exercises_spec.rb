@@ -17,11 +17,17 @@ describe "#to_sum" do
   let(:arr) { [-1, 0, 2, -2, 1] }
 
   it "return all zero sum pairs" do
+    expect(to_sum(arr).all?{|pair| arr[pair[0]]+arr[pair[1]] == 0 }).to be true
 
   end
 
-  it " " do
+  it "returns pairs in order from lowest index" do
+    expect(to_sum(arr).all?{|pair| pair[0] < pair[1]}).to be true
     
+  end
+
+  it "returns a 2D array" do
+    expect(to_sum(arr).all?{|pair| pair.is_a?(Array)}).to be true
   end
 end
 # RSpec.describe "Constraining a message expectation using with" do

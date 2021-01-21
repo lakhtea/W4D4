@@ -4,4 +4,13 @@ def my_uniq(arr)
     arr_2
 end
 
-def 
+def to_sum(arr)
+  result = []
+  (0...arr.length).each do |i|
+    (i+1...arr.length).each do |j|
+      result << [i, j] if arr[i]+arr[j] == 0
+    end
+  end
+  result
+  
+end
